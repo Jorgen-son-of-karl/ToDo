@@ -4,13 +4,15 @@ const todoList = document.getElementById('todoList');
 
 var todo = [];
 
-form.onsubmit = function(event){
-	event.preventDefault();
-	removeAllChildren(todoList);
-	userInput = form.elements.todoInput.value;
-	todo.push(userInput);
-	todo.forEach(printList);
-}
+ 	document.onkeydown = function () {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+			removeAllChildren(todoList);
+			userInput = form.elements.todoInput.value;
+			todo.push(userInput);
+			todo.forEach(printList);
+        }
+    };
 
 
 
