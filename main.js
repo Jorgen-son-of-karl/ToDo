@@ -26,16 +26,22 @@ console.log(todo);
 	}
 
 function printList(item){
-	var todoLine = document.createElement('div');
-	todoLine.id = 'lineDiv';
+	// create div
+	// var row = document.createElement('div');
+	// row.className = 'lineDiv';
+
+	// create checkbox
 	var completeBox = document.createElement('input');
 	completeBox.type = 'checkbox';
+
+	// create listItem and text
 	var listItem = document.createElement('li');
 	var todoEntry = document.createTextNode(item);
-	todoLine.appendChild(completeBox);
-	listItem.appendChild(todoEntry);
-	todoLine.appendChild(listItem);
-	todoList.appendChild(todoLine);
+
+	// row.appendChild(completeBox); // div > checkbox
+	listItem.appendChild(todoEntry); // listItem > textNode
+	// row.appendChild(listItem); // div > listItem
+	todoList.appendChild(row); // todoList > div
 
 	console.log(item)
 

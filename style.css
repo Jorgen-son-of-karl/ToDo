@@ -46,20 +46,24 @@ ul {
     margin: 0;
 }
 
+.lineDiv{
+    display: inline-block;
+}
+
+input[type=checkbox] {
+    float: left;
+}
+
 li {
     font-size: 30px;
     border: solid black 1px;
     text-align: left;
     justify-content: left;
     padding: 15px;
+    margin-left: 25px;
     list-style-type: none;
 }
 
-
 .categoryBtn {
     display: none;
-}
-
-#lineDiv{
-	display: inline;
 }
