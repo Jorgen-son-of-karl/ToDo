@@ -26,9 +26,10 @@ console.log(todo);
 	}
 
 function printList(item){
+	
 	// create div
-	// var row = document.createElement('div');
-	// row.className = 'lineDiv';
+	var row = document.createElement('div');
+	row.className = 'lineDiv';
 
 	// create checkbox
 	var completeBox = document.createElement('input');
@@ -38,11 +39,16 @@ function printList(item){
 	var listItem = document.createElement('li');
 	var todoEntry = document.createTextNode(item);
 
-	// row.appendChild(completeBox); // div > checkbox
-	listItem.appendChild(completeBox);
+	// create delete button
+	var deleteBtn = document.createElement('button');
+	deleteBtn.textContent = '❌';
+	deleteBtn.id = 'delete';
+
+	listItem.appendChild(completeBox); // listItem > checkbox
 	listItem.appendChild(todoEntry); // listItem > textNode
-	// row.appendChild(listItem); // div > listItem
-	todoList.appendChild(listItem); // todoList > div
+	listItem.appendChild(deleteBtn); // listItem > deleteBtn
+	row.appendChild(listItem); // div > listItem
+	todoList.appendChild(row); // todoList > div
 
 	console.log(item)
 
