@@ -26,10 +26,17 @@ console.log(todo);
 	}
 
 function printList(item){
+	var todoLine = document.createElement('div');
+	todoLine.id = 'lineDiv';
+	var completeBox = document.createElement('input');
+	completeBox.type = 'checkbox';
 	var listItem = document.createElement('li');
-	var todoEntry = document.createTextNode(item);	
+	var todoEntry = document.createTextNode(item);
+	todoLine.appendChild(completeBox);
 	listItem.appendChild(todoEntry);
-	todoList.appendChild(listItem);
+	todoLine.appendChild(listItem);
+	todoList.appendChild(todoLine);
+
 	console.log(item)
 
 }
