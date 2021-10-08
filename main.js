@@ -39,9 +39,10 @@ function printList(item){
 	var todoEntry = document.createTextNode(item);
 
 	// row.appendChild(completeBox); // div > checkbox
+	listItem.appendChild(completeBox);
 	listItem.appendChild(todoEntry); // listItem > textNode
 	// row.appendChild(listItem); // div > listItem
-	todoList.appendChild(row); // todoList > div
+	todoList.appendChild(listItem); // todoList > div
 
 	console.log(item)
 
