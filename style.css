@@ -82,7 +82,7 @@ input[type=checkbox] {
 
 
 
-#delete {
+.delete {
     visibility: hidden;
     opacity: 50%;
     float: right;
@@ -94,7 +94,7 @@ input[type=checkbox] {
 }
 
 
-.lineDiv:hover #delete {
+.lineDiv:hover .delete {
     visibility: visible;
 }
 
