@@ -46,8 +46,7 @@ function check(checked = true) {
     	}
     	else{
     		cb.checked = false;
-    	}
-        
+    	}    
     });
     allChecked = allChecked ? false : true;
 }
@@ -76,7 +75,7 @@ function AddNewLine() {
   var textInput = document.getElementById("todoInput").value;
   var todoList = document.getElementById("todoList");
   var newLine = document.createElement("li");
-  newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'> "+textInput+" <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
+  newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'><div class=note>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
   
   container.insertBefore(newLine, todoList);
   
