@@ -98,7 +98,7 @@ input[type=checkbox] {
     visibility: visible;
 }
 
-#delete:hover {
+.delete:hover {
     opacity: 100%;
 }
 
