@@ -94,7 +94,7 @@ input[type=checkbox] {
 }
 
 
-.lineDiv:hover .delete {
+li:hover .delete {
     visibility: visible;
 }
 
