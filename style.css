@@ -17,12 +17,13 @@ h1 {
 #container {
     background-color: white;
     width: 470px;
+    border: solid gray 1px;
     margin: auto;
     padding: 0;
 }
 
 form {
-    border: solid gray 1px;
+    border-bottom: solid gray 1px;
     margin: auto;
 }
 
@@ -63,7 +64,7 @@ ul {
 li {
     display: block;
     font-size: 30px;
-    border: solid gray 1px;
+    border-bottom: solid gray 1px;
     text-align: left;
     justify-content: left;
     padding: 15px 15px 15px 60px;
