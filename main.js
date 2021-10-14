@@ -85,7 +85,8 @@ function AddNewLine() {
   //here we add to our li a checkbox and a delete span with the id of the variable that keeps tracks on our lines
   newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'>" +textInput+" <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
   
-  container.insertBefore(newLine, todoList);
+//   container.insertBefore(newLine, todoList);
+  todoList.appendChild(newLine);
   
 }
 
