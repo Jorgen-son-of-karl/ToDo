@@ -77,7 +77,8 @@ function AddNewLine() {
   var newLine = document.createElement("li");
   newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'><div class=note>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
   
-  container.insertBefore(newLine, todoList);
+//   container.insertBefore(newLine, todoList);
+  todoList.appendChild(newLine);
   
 }
 
