@@ -56,10 +56,10 @@ input[type="text"] {
 ul {
     padding: 0;
     margin: 0;
-    word-break: break-all;
 }
 
 li {
+    position: relative;
     display: flex;
     border-bottom: solid gray 1px;
     padding: 15px 0px;
@@ -70,26 +70,35 @@ input[type=checkbox] {
     /* text-align: center; */
     float: left;
     /* position: absolute; */
-    height: 30px;
-    width: 30px;
+    min-height: 30px;
+    min-width: 30px;
     margin-left: 13px;
 }
 
 .note {
+    margin-left: 3%;
+    text-align: left;
     font-size: 30px;
-    text-indent: 20px;
-    overflow:hidden;
+    /* text-indent: 20px; */
+    word-break: break-all;
+    /* overflow:hidden; */
 }
 
 .delete {
+    /* float: right; */
     position: absolute;
+    justify-content: right;
+    right: 3%;
+    text-align: right;
+    /* white-space: nowrap; */
+    /* text-align: right; */
     visibility: hidden;
     opacity: 50%;
     font-size: 25px;
     background: none;
     border: none;
-    margin: 0 20;
-    padding-left: 10px;
+    /* margin: 0 20;
+    padding-left: 10px; */
     
 }
 
