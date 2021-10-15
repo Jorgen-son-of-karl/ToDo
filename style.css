@@ -82,8 +82,8 @@ input[type=checkbox] {
 
 .delete {
     position: absolute;
-    justify-content: flex-end;
     right: 3%;
+    top: 50%;
     /* bottom: 10%; */
     /* margin-top: auto; */
     visibility: hidden;
