@@ -94,33 +94,18 @@ function AddNewLine() {
 
 //this delete function gets called when we click the del span
 function delLine(lineID, delcompleted = 0) {
-	var checkboxes = document.getElementsByClassName("check");
-	  
-	 // if(delcompleted){
-		// const cbs = document.querySelectorAll('.check');
-  //   	cbs.forEach((cb) => {
-  //   		if(cb.checked){
-  //   			checkboxes.item(cb).parentNode.remove();
-  //   			// totalLines--;
-  //   		}
-  //   	})
-  //   }
 
-		if(delcompleted){
+	if(delcompleted){
+		var checkboxes = document.querySelectorAll(".check:checked");
 		for(i = 0; i < checkboxes.length; i++){
-			var checked = checkboxes.item(i).checked;
-			console.log(i, checked);
-			if(checked = true){
-
-				checkboxes.item(i).parentNode.remove();
-				console.log("removed");
-				//totalLines--;
-			}
+			checkboxes.item(i).parentNode.remove();
+			totalLines--;
 		}
+		console.log(totalLines);
 	}
-		
-		else{
-				//it removes the parent of the element with the lineID
+	
+	else if(lineID){
+			//it removes the parent of the element with the lineID
 		document.getElementById(lineID).parentNode.remove();
 		//the variable gets updated
 		totalLines--;
@@ -132,5 +117,4 @@ function delLine(lineID, delcompleted = 0) {
 			}
 		}
 	}
-
 }
