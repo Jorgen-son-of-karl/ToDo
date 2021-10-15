@@ -8,6 +8,8 @@ const markAllBtn = document.getElementById("markAll");
 var container = document.getElementById("container");
 var form = document.querySelector("form");
 let allChecked = false;
+var removeCompleted = document.getElementById("removeCompleted");
+var checkedItems = 0;
 
 // the buttons to show completed/active/all todos does similar things so we just
 // call the filter method with different parameters
@@ -51,6 +53,7 @@ function check(checked = true) {
     });
     allChecked = allChecked ? false : true;
 }
+console.log(checkedItems);
 
 //we call our "toggle" function on this button
 markAllBtn.onclick = function(){
@@ -83,24 +86,51 @@ function AddNewLine() {
   var todoList = document.getElementById("todoList");
   var newLine = document.createElement("li");
   //here we add to our li a checkbox and a delete span with the id of the variable that keeps tracks on our lines
-  newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'>" +textInput+" <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
+  newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'><div class='note'>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
   
-//   container.insertBefore(newLine, todoList);
-  todoList.appendChild(newLine);
-  
+  //container.insertBefore(newLine, todoList);
+  todoList.appendChild(newLine);  
 }
 
 //this delete function gets called when we click the del span
-function delLine(lineID) {
-	//it removes the parent of the element with the lineID
-document.getElementById(lineID).parentNode.remove();
-//the variable gets updated
-totalLines--;
+function delLine(lineID, delcompleted = 0) {
+	var checkboxes = document.getElementsByClassName("check");
+	  
+	 // if(delcompleted){
+		// const cbs = document.querySelectorAll('.check');
+  //   	cbs.forEach((cb) => {
+  //   		if(cb.checked){
+  //   			checkboxes.item(cb).parentNode.remove();
+  //   			// totalLines--;
+  //   		}
+  //   	})
+  //   }
 
-//and if we dont have any todos we want to hide theese buttons again
-	if(totalLines<1) {
-		for (var i = 0; i < categoryBtns.length; i++){
-			categoryBtns[i].style.display = "none";
+		if(delcompleted){
+		for(i = 0; i < checkboxes.length; i++){
+			var checked = checkboxes.item(i).checked;
+			console.log(i, checked);
+			if(checked = true){
+
+				checkboxes.item(i).parentNode.remove();
+				console.log("removed");
+				//totalLines--;
+			}
 		}
 	}
+		
+		else{
+				//it removes the parent of the element with the lineID
+		document.getElementById(lineID).parentNode.remove();
+		//the variable gets updated
+		totalLines--;
+
+		//and if we dont have any todos we want to hide theese buttons again
+		if(totalLines<1) {
+			for (var i = 0; i < categoryBtns.length; i++){
+				categoryBtns[i].style.display = "none";
+			}
+		}
+	}
+
 }

@@ -82,7 +82,7 @@ input[type=checkbox] {
 }
 
 .delete {
-    position: absolute;
+/*    position: absolute;*/
     visibility: hidden;
     opacity: 50%;
     font-size: 25px;
