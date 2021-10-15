@@ -114,12 +114,12 @@ li:hover .delete {
 }
 
 #clear {
-    /* display: none; */
+    /* display: none;
     border: none;
     text-decoration: underline;
     background: transparent;
     margin: 8px 2px;
-    text-align: right;
+    text-align: right; */
 }
 
 #clear:hover {
