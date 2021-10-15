@@ -82,9 +82,10 @@ input[type=checkbox] {
 
 .delete {
     position: absolute;
-    justify-content: right;
+    justify-content: flex-end;
     right: 3%;
-    text-align: right;
+    /* bottom: 10%; */
+    /* margin-top: auto; */
     visibility: hidden;
     opacity: 50%;
     font-size: 25px;
@@ -111,6 +112,19 @@ li:hover .delete {
 
 .categoryBtn:hover {
     border: solid rgb(201, 159, 166) 1px;
+    cursor: pointer;
+}
+
+#clear {
+    /* display: none; */
+    border: none;
+    text-decoration: underline;
+    background: transparent;
+    margin: 8px 2px;
+    text-align: right;
+}
+
+#clear:hover {
     cursor: pointer;
 }
 
