@@ -49,10 +49,12 @@ function check(checked = true) {
     const cbs = document.querySelectorAll('.check');
     cbs.forEach((cb) => {
     	if(allChecked == false){
+			clear.style.display = "inline-block";
     		cb.checked = true;
     		checkedItems = totalLines;
     	}
     	else{
+			clear.style.display = "none";
     		cb.checked = false;
     		checkedItems = 0;
     	}    
@@ -90,8 +92,8 @@ function AddNewLine() {
 	lines++;
 	    //if we call this function we want our category buttons to be shown
 	  	for (var i = 0; i < categoryBtns.length; i++){
+			output.style.display = "inline-block";
 			categoryBtns[i].style.display = "inline-block";
-			clear.style.display = "inline-block";
 			markAllBtn.style.visibility = "visible";
 		}
 	var textInput = document.getElementById("todoInput").value;
@@ -116,6 +118,7 @@ function delLine(lineID, delcompleted = 0) {
 			totalLines--;
 		}
 		checkedItems = 0;
+		clear.style.display = "none";
 	}
 	
 	else if(lineID){
@@ -151,11 +154,19 @@ function delLine(lineID, delcompleted = 0) {
 
 function calcTodos(checkID){
 var check = document.getElementById(checkID);
+
 	if(check.checked == true){
 		checkedItems++;
 	}
 	else{
 		checkedItems--;
+	}
+
+	if (checkedItems > 0){
+		clear.style.display = "inline-block";
+	}
+	else {
+		clear.style.display = "none";
 	}
  	updateOutput();
 }
