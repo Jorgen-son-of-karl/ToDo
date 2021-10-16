@@ -10,6 +10,7 @@ var form = document.querySelector("form");
 let allChecked = false;
 var removeCompleted = document.getElementById("removeCompleted");
 var checkedItems = 0;
+var clear = document.getElementById("clear");
 
 
 // the buttons to show completed/active/all todos does similar things so we just
@@ -82,6 +83,8 @@ function AddNewLine() {
 	    //if we call this function we want our category buttons to be shown
 	  	for (var i = 0; i < categoryBtns.length; i++){
 			categoryBtns[i].style.display = "inline-block";
+			clear.style.display = "inline-block";
+			markAllBtn.style.visibility = "visible";
 		}
 	var textInput = document.getElementById("todoInput").value;
 	var todoList = document.getElementById("todoList");
@@ -112,10 +115,12 @@ function delLine(lineID, delcompleted = 0) {
 		totalLines--;
 
 		//and if we dont have any todos we want to hide theese buttons again
-		if(totalLines < 1) {
-			for (var i = 0; i < categoryBtns.length; i++){
-				categoryBtns[i].style.display = "none";
-			}
+	}
+	if(totalLines < 1) {
+		for (var i = 0; i < categoryBtns.length; i++){
+			categoryBtns[i].style.display = "none";
+			clear.style.display = "none";
+			markAllBtn.style.visibility = "hidden";
 		}
 	}
 }
