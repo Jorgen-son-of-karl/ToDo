@@ -113,7 +113,9 @@ function delLine(lineID, delcompleted = 0) {
 		document.getElementById(lineID).parentNode.remove();
 		//the variable gets updated
 		totalLines--;
-
+		if(!lineID.checked){
+			checkedItems--;
+		}
 		//and if we dont have any todos we want to hide theese buttons again
 	}
 	if(totalLines < 1) {
@@ -124,7 +126,7 @@ function delLine(lineID, delcompleted = 0) {
 		}
 		
 	}
-updateOutput();
+	updateOutput();
 	console.log(output);
 }
 
