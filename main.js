@@ -17,14 +17,17 @@ var checkboxes = document.querySelectorAll(".check");
 // call the filter method with different parameters
 completeBtn.onclick = function(){
 	filter("completed");
+	updateOutput();
 };
 
 activeBtn.onclick = function(){
 	filter("active");
+	updateOutput();
 };
 
 allBtn.onclick = function(){
 	filter("all");
+	updateOutput();
 };
 
 //this is our method that filters what to show, depending on whats checked as completed, and what button we pressed
@@ -60,6 +63,7 @@ function check(checked = true) {
 //we call our "toggle" function on this button
 markAllBtn.onclick = function(){
 	check();
+	updateOutput();
 }
 
 //this eventhandler starts if we press "enter"
