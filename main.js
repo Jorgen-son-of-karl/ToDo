@@ -95,6 +95,7 @@ function AddNewLine() {
 	var textInput = document.getElementById("todoInput").value;
 	var todoList = document.getElementById("todoList");
 	var newLine = document.createElement("li");
+	newLine.className = "listItem";
 	//here we add to our li a checkbox and a delete span with the id of the variable that keeps tracks on our lines
 	newLine.innerHTML = "<input class='check' onclick='calcTodos("+totalLines+")' type='checkbox' id='"+totalLines+"'><div class='note'>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
   
