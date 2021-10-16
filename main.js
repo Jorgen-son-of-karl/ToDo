@@ -29,11 +29,11 @@ allBtn.onclick = function(){
 
 //this is our method that filters what to show, depending on whats checked as completed, and what button we pressed
 function filter(method) {
-    //var checkboxes = document.getElementsByClassName("check");
+    var checkboxes = document.getElementsByClassName("check");
     for (var i = 0; i < checkboxes.length; i++) {
         var checked = checkboxes.item(i).checked;
         if((checked && method == 'completed') || (!checked && method == 'active') || method == 'all') {
-            checkboxes.item(i).parentNode.style.display = 'list-item';
+            checkboxes.item(i).parentNode.style.display = 'flex';
         }
         else {
             checkboxes.item(i).parentNode.style.display = 'none';
