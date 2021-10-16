@@ -67,27 +67,26 @@ li {
 }
 
 input[type=checkbox] {
-    float: left;
     min-height: 30px;
     min-width: 30px;
-    margin-left: 13px;
+    margin-left: 3%;
 }
 
 .note {
-    margin-left: 3%;
     text-align: left;
     font-size: 30px;
+    width: 380px;
+    justify-content: center;
+    margin-left: 2%;
     word-break: break-all;
 }
 
 .delete {
-    position: absolute;
-    justify-content: right;
-    right: 3%;
-    text-align: right;
     visibility: hidden;
     opacity: 50%;
     font-size: 25px;
+    margin: auto 0;
+    margin-right: 1%;
     background: none;
     border: none;
 }
@@ -111,6 +110,19 @@ li:hover .delete {
 
 .categoryBtn:hover {
     border: solid rgb(201, 159, 166) 1px;
+    cursor: pointer;
+}
+
+#clear {
+    /* display: none;
+    border: none;
+    text-decoration: underline;
+    background: transparent;
+    margin: 8px 2px;
+    text-align: right; */
+}
+
+#clear:hover {
     cursor: pointer;
 }
 
