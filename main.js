@@ -87,7 +87,7 @@ document.onkeydown = function (event, keycode) {
 function AddNewLine() {
 	//this variable keeps track on how many lines we have
 	totalLines++; 
-	line++;
+	lines++;
 	    //if we call this function we want our category buttons to be shown
 	  	for (var i = 0; i < categoryBtns.length; i++){
 			categoryBtns[i].style.display = "inline-block";
