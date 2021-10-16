@@ -142,8 +142,9 @@ function delLine(lineID, delcompleted = 0) {
 	if(totalLines < 1) {
 		for (var i = 0; i < categoryBtns.length; i++){
 			categoryBtns[i].style.display = "none";
-			clear.style.display = "none";
+			// clear.style.display = "none";
 			markAllBtn.style.visibility = "hidden";
+			output.style.display = "none";
 		}
 		
 	}
