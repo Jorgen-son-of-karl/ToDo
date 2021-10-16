@@ -1,5 +1,6 @@
 //here we declare some global variables
 var totalLines = 0;
+var lines = 0;
 var allBtn = document.getElementById("all");
 var activeBtn = document.getElementById("active");
 var completeBtn = document.getElementById("completed");
@@ -86,6 +87,7 @@ document.onkeydown = function (event, keycode) {
 function AddNewLine() {
 	//this variable keeps track on how many lines we have
 	totalLines++; 
+	line++;
 	    //if we call this function we want our category buttons to be shown
 	  	for (var i = 0; i < categoryBtns.length; i++){
 			categoryBtns[i].style.display = "inline-block";
@@ -97,7 +99,7 @@ function AddNewLine() {
 	var newLine = document.createElement("li");
 	newLine.className = "listItem";
 	//here we add to our li a checkbox and a delete span with the id of the variable that keeps tracks on our lines
-	newLine.innerHTML = "<input class='check' onclick='calcTodos("+totalLines+")' type='checkbox' id='"+totalLines+"'><div class='note'>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
+	newLine.innerHTML = "<input class='check' onclick='calcTodos("+lines+")' type='checkbox' id='"+lines+"'><div class='note'>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+lines+");'>❌</span>";
   
   	todoList.appendChild(newLine);
   	updateOutput(); 
