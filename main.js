@@ -17,17 +17,15 @@ var checkboxes = document.querySelectorAll(".check");
 // call the filter method with different parameters
 completeBtn.onclick = function(){
 	filter("completed");
-	updateOutput();
 };
 
 activeBtn.onclick = function(){
 	filter("active");
-	updateOutput();
+
 };
 
 allBtn.onclick = function(){
 	filter("all");
-	updateOutput();
 };
 
 //this is our method that filters what to show, depending on whats checked as completed, and what button we pressed
@@ -51,12 +49,16 @@ function check(checked = true) {
     cbs.forEach((cb) => {
     	if(allChecked == false){
     		cb.checked = true;
+    		checkedItems = totalLines;
     	}
     	else{
     		cb.checked = false;
+    		checkedItems = 0;
     	}    
     });
     allChecked = allChecked ? false : true;
+    console.log("checkedItems:" + checkedItems);
+    console.log("totalLines:" + totalLines);
 }
 
 
@@ -108,8 +110,9 @@ function delLine(lineID, delcompleted = 0) {
 		var checkboxes = document.querySelectorAll(".check:checked");
 		for(i = 0; i < checkboxes.length; i++){
 			checkboxes.item(i).parentNode.remove();
+			totalLines--;
 		}
-		totalLines - checkboxes.length;
+		checkedItems = 0;
 	}
 	
 	else if(lineID){
@@ -125,8 +128,11 @@ function delLine(lineID, delcompleted = 0) {
 			totalLines--;
 		}
 		document.getElementById(lineID).parentNode.remove();
-		//and if we dont have any todos we want to hide theese buttons again
+		//and if we dont have any todos we want to hide theese buttons agai
 	}
+
+	    console.log("checkedItems:" + checkedItems);
+    console.log("totalLines:" + totalLines);
 	if(totalLines < 1) {
 		for (var i = 0; i < categoryBtns.length; i++){
 			categoryBtns[i].style.display = "none";
