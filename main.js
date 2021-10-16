@@ -1,5 +1,5 @@
 //here we declare some global variables
-let totalLines = 0;
+var totalLines = 0;
 var allBtn = document.getElementById("all");
 var activeBtn = document.getElementById("active");
 var completeBtn = document.getElementById("completed");
@@ -110,12 +110,17 @@ function delLine(lineID, delcompleted = 0) {
 	
 	else if(lineID){
 		//removes the parent of the element with the lineID
-		document.getElementById(lineID).parentNode.remove();
+		
+		var check = document.getElementById(lineID);
 		//the variable gets updated
-		totalLines--;
-		if(!lineID.checked){
-			checkedItems--;
+		if(!check.checked){
+			totalLines--;
 		}
+		else{
+			checkedItems--;
+			totalLines--;
+		}
+		document.getElementById(lineID).parentNode.remove();
 		//and if we dont have any todos we want to hide theese buttons again
 	}
 	if(totalLines < 1) {
