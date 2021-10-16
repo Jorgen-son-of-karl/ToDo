@@ -11,7 +11,7 @@ let allChecked = false;
 var removeCompleted = document.getElementById("removeCompleted");
 var checkedItems = 0;
 var clear = document.getElementById("clear");
-
+var checkboxes = document.querySelectorAll(".check");
 
 // the buttons to show completed/active/all todos does similar things so we just
 // call the filter method with different parameters
@@ -90,9 +90,10 @@ function AddNewLine() {
 	var todoList = document.getElementById("todoList");
 	var newLine = document.createElement("li");
 	//here we add to our li a checkbox and a delete span with the id of the variable that keeps tracks on our lines
-	newLine.innerHTML = "<input class='check' type='checkbox' id='"+totalLines+"'><div class='note'>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
+	newLine.innerHTML = "<input class='check' onclick='calcTodos("+totalLines+")' type='checkbox' id='"+totalLines+"'><div class='note'>"+textInput+"</div> <span class=" +"delete"+ " onclick='delLine("+totalLines+");'>❌</span>";
   
-  	todoList.appendChild(newLine);  
+  	todoList.appendChild(newLine);
+  	updateOutput(); 
 }
 
 //this delete function gets called when we click the del span or
@@ -103,9 +104,8 @@ function delLine(lineID, delcompleted = 0) {
 		var checkboxes = document.querySelectorAll(".check:checked");
 		for(i = 0; i < checkboxes.length; i++){
 			checkboxes.item(i).parentNode.remove();
-			totalLines--;
 		}
-		console.log(totalLines);
+		totalLines - checkboxes.length;
 	}
 	
 	else if(lineID){
@@ -122,5 +122,28 @@ function delLine(lineID, delcompleted = 0) {
 			clear.style.display = "none";
 			markAllBtn.style.visibility = "hidden";
 		}
+		
 	}
+updateOutput();
+	console.log(output);
 }
+
+
+function calcTodos(checkID){
+var check = document.getElementById(checkID);
+	if(check.checked == true){
+		checkedItems++;
+	}
+	else{
+		checkedItems--;
+	}
+ 	updateOutput();
+}
+
+function updateOutput(){
+	var output = totalLines - checkedItems;
+	var itemsLeft = document.getElementById("output");
+	itemsLeft.innerHTML = output + " items left";
+}
+
+
