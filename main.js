@@ -1,6 +1,8 @@
 //here we declare some global variables
 var totalLines = 0;
 var lines = 0;
+var checkedItems = 0;
+let allChecked = false;
 var allBtn = document.getElementById("all");
 var activeBtn = document.getElementById("active");
 var completeBtn = document.getElementById("completed");
@@ -8,9 +10,7 @@ const categoryBtns = document.querySelectorAll('.categoryBtn');
 const markAllBtn = document.getElementById("markAll");
 var container = document.getElementById("container");
 var form = document.querySelector("form");
-let allChecked = false;
 var removeCompleted = document.getElementById("removeCompleted");
-var checkedItems = 0;
 var clear = document.getElementById("clear");
 var checkboxes = document.querySelectorAll(".check");
 
