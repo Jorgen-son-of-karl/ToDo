@@ -80,7 +80,7 @@ markAllBtn.onclick = function () {
 document.onkeydown = function (event, keycode) {
 	if (event.keyCode === 13) {
 		if (form.elements.todoInput.value != "") {
-			AddNewLine();
+			addNewLine();
 			form.reset();
 		}
 		event.preventDefault();
@@ -88,7 +88,7 @@ document.onkeydown = function (event, keycode) {
 }
 
 //this function adds the user input on our todolist
-function AddNewLine() {
+function addNewLine() {
 	//this variable keeps track on how many lines we have
 	totalLines++;
 	lines++;
