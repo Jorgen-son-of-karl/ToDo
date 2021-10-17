@@ -146,6 +146,12 @@ function delLine(lineID, delcompleted = 0) {
 		}
 
 	}
+	if (checkedItems > 0) {
+		clear.style.visibility = "visible";
+	}
+	else {
+		clear.style.visibility = "hidden";
+	}
 	calcOutput();
 }
 
